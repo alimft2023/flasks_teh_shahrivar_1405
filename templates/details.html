@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}details{% endblock title %}
+
+{% block bgcolor %}lightcyan{% endblock bgcolor %}
+
+{% block content %}
+<a href="{{url_for('index')}}" class="btn btn-primary">GoBack</a>
+<!--<a href="{{url_for('delete',id=st.id)}}" class="btn btn-danger">Delete</a>-->
+<a onmouseleave="confirmDelete()" class="btn btn-danger">Delete</a>
+<a href="{{url_for('update',id=st.id)}}" class="btn btn-info">Update</a>
+<script>
+    function confirmDelete()
+    {
+        res=confirm('Are you sure to delete? ');
+        if (res==true)
+            {
+                window.location.href = '/delete/{{st.id}}';
+            }
+    }
+</script>
+<h1>{{st.id}}</h1>
+<h2>{{st.name}}</h2>
+<h3>{{st.family}}</h3>
+{% endblock content %}
