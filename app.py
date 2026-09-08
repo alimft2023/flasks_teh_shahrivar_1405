@@ -49,5 +49,10 @@ def update(id):
         return render_template('update.html', st=st)
 
 
+@app.route('/skdjfhkj')
+def f():
+    pass
+
+
 if __name__ == "__main__":
     app.run(debug=True)
